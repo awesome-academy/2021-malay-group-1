@@ -29,6 +29,11 @@ jp:
   profile: "プロフィール"
   settings: "設定"
   remember: "このパソコンでユーザー保存"
+  forgot_password: "Forgot password"
+  Reset_password: "Reset Password"
+  email_sent: 'Please check your email'
+  email_not_found: "Email not found"
+  password_reset: "Password has been reset"
   static_pages:
     home:
       title: "Home - JA"

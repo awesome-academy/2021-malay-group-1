@@ -3,7 +3,7 @@ class UsersController < ApplicationController
     @user = User.find_by id: params[:id]
 
     unless @user
-      flash[:danger] = t("user_not_found")
+      flash[:danger] = t(:user_not_found)
       redirect_to home_path
     end
   end

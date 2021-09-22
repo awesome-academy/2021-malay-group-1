@@ -34,6 +34,9 @@ en:
   email_sent: 'Please check your email'
   email_not_found: "Email not found"
   password_reset: "Password has been reset"
+  activated: "Account activated"
+  invalid_activation: "Invalid activation"
+  check: "Please check your email"
   static_pages:
     home:
       title: "Home"

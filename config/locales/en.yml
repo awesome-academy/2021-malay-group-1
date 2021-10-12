@@ -37,6 +37,17 @@ en:
   check: "Please check your email"
   activated: "Yey account activated"
   invalid_acivation: "Invalid activation link"
+  delete: "Delete"
+  sure: "You sure?"
+  edit_user: "Edit user"
+  save_changes: "Save changes"
+  update_profile: "Update profile"
+  name: "Name"
+  email: "Email"
+  password: "Password"
+  confirmation: "Password Confirmation"
+  save_changes: "Save changes"
+  Please_log_in: "Please log in"
   static_pages:
     home:
       title: "Home"

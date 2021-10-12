@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :logged_in_user, except: [:new, :create]
+  before_action :logged_in_user, except: [:new, :create, :show]
   before_action :correct_user, only: [:edit, :update]
   before_action :admin_user, only: :destroy
 
@@ -35,12 +35,40 @@ class UsersController < ApplicationController
     end
   end
 
+  def edit
+    @user = User.find_by(id: params[:id])
+  end
+
   def update
-    @user = User.find(params[:id])
+    @user = User.find_by(id: params[:id])
+    if @user.update_attributes(user_params)
+      flash[:success] = t("Profile updated")
+      redirect_to @user
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    user = User.find_by(id: params[:id])
+    if user&.destroy
+      flash[:success] = t("User deleted")
+    else
+      flash[:danger] = t("Delete fail!")
+    end
+    redirect_to users_url
   end
 
 
   private
+
+  def logged_in_user
+    unless logged_in?
+      store_location
+      flash[:danger] = t(:Please_log_in)
+      redirect_to login_url
+    end
+  end
 
   def user_params
     params.require(:user).permit :name, :email, :password, :password_confirmation

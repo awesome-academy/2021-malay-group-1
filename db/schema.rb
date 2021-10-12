@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2021_10_08_055504) do
 
-  create_table "courses", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "courses", charset: "utf8mb3", force: :cascade do |t|
     t.string "name"
     t.text "description"
     t.integer "status", default: 0
@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 2021_10_08_055504) do
     t.integer "total_member", default: 0
   end
 
-  create_table "registers", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "registers", charset: "utf8mb3", force: :cascade do |t|
     t.integer "user_id"
     t.integer "course_id"
     t.integer "status", default: 0
@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 2021_10_08_055504) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "reviews", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "reviews", charset: "utf8mb3", force: :cascade do |t|
     t.integer "user_id"
     t.integer "course_id"
     t.text "content"
@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 2021_10_08_055504) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "users", charset: "utf8mb3", force: :cascade do |t|
     t.string "name"
     t.string "email"
     t.datetime "created_at", precision: 6, null: false

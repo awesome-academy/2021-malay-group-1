@@ -1,7 +1,9 @@
 <% provide :title, t(:sign_up) %>
+<% provide(:button_text, t(:create_my_account)) %>
 <h1><%= t(:sign_up) %></h1>
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
+    <%= rendern "form" %>
     <%= form_for @user, url: signup_path do |f| %>
       <% if @user.errors.any? %>
         <div id="error_explanation">
